@@ -10,7 +10,8 @@ async function addUser(user) {
     throw "User already exists";
   }
   const insertInfo = await userCollection.insertOne(user);
-  return insertInfo.insertedId;
+  const newUser = await userCollection.findOne({ _id: insertInfo.insertedId });
+  return newUser;
 }
 
 // Function to get a specific user by ID

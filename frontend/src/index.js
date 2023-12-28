@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Root from './components/Root';
+import Calender from './components/Calender';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+  },
+  {
+    path: "/calender",
+    element: <Calender />,
   },
 ]);
 
